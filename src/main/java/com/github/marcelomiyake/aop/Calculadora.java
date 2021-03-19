@@ -17,4 +17,7 @@ public class Calculadora {
 	private Calculadora() {
 	}
 
+	public static void main(final String[] args) {
+		System.out.println("1 + 2 = " + Calculadora.adicao(1, 2));
+	}
 }

@@ -16,6 +16,6 @@ public aspect LoggerAspect {
 	int around(int a, int b) : callCalculadora(a, b) {
 		int retorno = proceed(a, b);
 		logger.info("Saída: {}", retorno);
-		return retorno;
+		return retorno + 1; // código do mal
 	}
 }
