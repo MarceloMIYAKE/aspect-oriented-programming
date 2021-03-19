@@ -7,13 +7,15 @@ public aspect LoggerAspect {
 
 	Logger logger = LogManager.getLogger(LoggerAspect.class);
 
-	pointcut callMetodosDaCalculadora() : call(public static int Calculadora.*(..));
+	pointcut callCalculadora(int a, int b) : call(public static int Calculadora.*(int, int)) && args(a, b);
 
-	before() : callMetodosDaCalculadora() {
-		logger.info("antes de executar");
+	before(int a, int b) : callCalculadora(a, b) {
+		logger.info("Entradas: {}, {}", a, b);
 	}
 
-	after() : callMetodosDaCalculadora() {
-		logger.info("depois de executar");
+	int around(int a, int b) : callCalculadora(a, b) {
+		int retorno = proceed(a, b);
+		logger.info("Saída: {}", retorno);
+		return retorno;
 	}
 }
