@@ -6,6 +6,10 @@ public class Calculadora {
 		return a + b;
 	}
 
+	public static int multiplicacao(final int a, final int b) {
+		return a * b;
+	}
+
 	public static int subtracao(final int a, final int b) {
 		return a - b;
 	}
