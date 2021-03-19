@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<File name="auditoria" fileName="audit.log" append="true">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p[%M] %m%n</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="auditoria" />
+		</Root>
+	</Loggers>
+</Configuration>
